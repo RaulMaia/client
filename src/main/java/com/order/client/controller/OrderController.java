@@ -40,10 +40,10 @@ public class OrderController {
 		this.repository.save(order);
 	}
 	
-//	@RequestMapping(value = "/order/{id}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
-//	public void update(@PathVariable BigDecimal id, @RequestBody Orders order) {
-//		this.repository.saveAndFlush(order);
-//	}
+	@RequestMapping(value = "/order/", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+	public void update(@RequestBody Orders order) {
+		this.repository.saveAndFlush(order);
+	}
 	
 	@RequestMapping(value = "/order/{id}", method = RequestMethod.DELETE)
 	public void delete(@PathVariable BigDecimal id) {
