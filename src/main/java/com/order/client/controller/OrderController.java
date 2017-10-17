@@ -20,7 +20,7 @@ public class OrderController {
 	@Autowired
 	OrderRepository repository;
 	
-	@RequestMapping(value = "/order/", method = RequestMethod.GET)
+	@RequestMapping(value = "/order", method = RequestMethod.GET)
 	public List<Orders> findAllOrders() {
 		return this.repository.findAll();
 	}
@@ -35,12 +35,12 @@ public class OrderController {
 		return repository.findByPrice(preco, preco2);
 	}
 	
-	@RequestMapping(value = "/order/", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/order", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public void saveOrderInApplication(@RequestBody Orders order){
 		this.repository.save(order);
 	}
 	
-	@RequestMapping(value = "/order/", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/order", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
 	public void update(@RequestBody Orders order) {
 		this.repository.saveAndFlush(order);
 	}
